@@ -69,6 +69,11 @@ This continuous adjustment allows the robot to follow the line smoothly.
 ## Team members / credits
 
 *[Members]*
+Mary Marghareth Bueno
+Norvel Ian Gendoy
+John Dio Lumacang
+Methuselah Noreen Presbitero
+Cyril Josef Tinae
 
 ## License
 
