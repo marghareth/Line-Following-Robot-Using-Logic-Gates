@@ -1,5 +1,6 @@
 # Line-Following-Robot-Using-Logic-Gates
-A hardware-based line following robot that uses logic gates (AND, OR, NOT, NAND, NOR, XOR) instead of microcontrollers for decision-making and motor control.
+A hardware-based line following robot that uses logic gates (AND, OR, NOT) instead of microcontrollers for decision-making and motor control.
+
 ## What the Robot Does
 
 A line-following robot is an autonomous robot that moves by detecting and following a visible line on the floor (black line on a white surface). It continuously adjusts its direction to stay on the path without human control.
@@ -56,25 +57,73 @@ This continuous adjustment allows the robot to follow the line smoothly.
 
 ## Circuit Diagram
 
-*[Add your circuit diagram image here]*
+![Circuit Diagram](images/circuit-diagram.png)
+
+*Detailed circuit schematics, truth tables, and K-maps are available in the [docs/](docs/) folder.*
 
 ## Demo (Photos/Videos)
 
-*[Add a GIF or video of your robot in action]*
+![Robot Photo](images/robot-assembled.jpg)
+
+*[Demo video will be added here]*
 
 ## Setup/Build Instructions
 
-*[Manual]*
+### Phase 1: Logic Design
+1. Create the truth table for all sensor input combinations (3 sensors = 8 states)
+2. Use Karnaugh Maps (K-maps) to simplify the Boolean expressions
+3. Identify the required logic gates: IC 7404 (NOT), IC 7408 (AND), IC 7432 (OR)
 
-## Team members / credits
+### Phase 2: Assembly
 
-*[Members]*
-Mary Marghareth Bueno
-Norvel Ian Gendoy
-John Dio Lumacang
-Methuselah Noreen Presbitero
-Cyril Josef Tinae
+**Step 1: Assemble the Chassis**
+- Attach the DC motors to the motor chassis
+- Mount the wheels to the motor shafts
+- Secure the base plate
+
+**Step 2: Build the Logic Circuit**
+- Implement the simplified Boolean expressions on the breadboard
+- Connect the ICs with proper power (VCC and GND)
+- Add inverters (NOT gates) to the sensor inputs as needed
+- Test each gate output before proceeding
+
+**Step 3: Connect IR Sensors**
+- Mount the IR sensors at the front of the robot, close to the ground
+- Connect sensor outputs to the logic circuit inputs
+- Test sensor detection on black and white surfaces
+
+**Step 4: Connect the Motor Driver**
+- Wire the logic circuit outputs to the L298N input pins
+- Connect the DC motors to the L298N output terminals
+- Connect PWM to the enable pins for speed control
+- Wire the motor driver to the battery
+
+**Step 5: Power Distribution**
+- Install the master switch between the battery and circuit
+- Distribute power to the logic ICs, motor driver, and IR sensors
+
+**Step 6: Testing and Calibration**
+- Test the robot on a straight line
+- Adjust sensor sensitivity for proper line detection
+- Fine-tune motor speed using PWM to prevent wiggling
+- Test on curves and adjust sensor placement as needed
+
+For detailed assembly instructions, see [docs/build-guide.md](docs/build-guide.md).
+
+## Team Members / Credits
+
+**Tonton's Malunggay Pandesal**
+
+- Mary Maghareth Bueno
+- Norvel Ian Gendoy
+- John Dio Lumacang
+- Methuselah Noreen Presbitero
+- Cyril Josef Tinae
+
+*CMSC 130 - Logic Design and Digital Computer Circuits*  
+*University of the Philippines Cebu*  
+*December 15, 2024*
 
 ## License
 
-*[Add your license information here]*
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
